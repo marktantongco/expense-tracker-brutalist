@@ -19,54 +19,62 @@ export const RecurringTransactions = ({ onAddRecurring }) => {
 
   useEffect(() => {
     localStorage.setItem('recurring-transactions', JSON.stringify(recurring));
-    
-    // Check for due recurring transactions
+  }, [recurring]);
+
+  useEffect(() => {
+    // Check for due recurring transactions (deferred to avoid render-time side effects)
     const checkRecurring = () => {
       const today = new Date();
+      let updated = false;
       
-      recurring.forEach(rec => {
-        if (!rec.enabled) return;
+      const updatedRecurring = recurring.map(rec => {
+        if (!rec.enabled) return rec;
         
         const lastRun = rec.lastRun ? new Date(rec.lastRun) : null;
         let shouldRun = false;
         
         if (rec.frequency === 'daily') {
-          shouldRun = !lastRun || (today.getDate() !== lastRun.getDate());
+          shouldRun = !lastRun || today.toDateString() !== lastRun.toDateString();
         } else if (rec.frequency === 'weekly') {
           const daysDiff = lastRun ? Math.floor((today - lastRun) / (1000 * 60 * 60 * 24)) : 7;
           shouldRun = daysDiff >= 7;
         } else if (rec.frequency === 'monthly') {
-          shouldRun = !lastRun || (today.getMonth() !== lastRun.getMonth() && today.getDate() >= parseInt(rec.dayOfMonth));
+          shouldRun = !lastRun || (today.getMonth() !== lastRun.getMonth() && today.getDate() >= parseInt(rec.dayOfMonth || 1));
         } else if (rec.frequency === 'yearly') {
           shouldRun = !lastRun || today.getFullYear() !== lastRun.getFullYear();
         }
         
         if (shouldRun) {
-          // Add transaction
           const now = new Date();
-          const timeStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + 
+          const timeStr = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }).toUpperCase() + 
                          ' • ' + now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
           
           onAddRecurring({
-            time: timeStr.toUpperCase(),
+            time: timeStr,
             category: rec.category,
             description: `${rec.description} (Recurring)`,
             amount: parseFloat(rec.amount),
             ref: `REF: RECURRING-${rec.id}`
           });
           
-          // Update last run
-          rec.lastRun = today.toISOString();
-          setRecurring([...recurring]);
+          updated = true;
+          return { ...rec, lastRun: today.toISOString() };
         }
+        return rec;
       });
+      
+      if (updated) setRecurring(updatedRecurring);
     };
     
-    checkRecurring();
-    const interval = setInterval(checkRecurring, 60000); // Check every minute
+    // Defer check to avoid side effects during render
+    const timeout = setTimeout(checkRecurring, 500);
+    const interval = setInterval(checkRecurring, 60000);
     
-    return () => clearInterval(interval);
-  }, [recurring, onAddRecurring]);
+    return () => {
+      clearTimeout(timeout);
+      clearInterval(interval);
+    };
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const handleSubmit = (e) => {
     e.preventDefault();

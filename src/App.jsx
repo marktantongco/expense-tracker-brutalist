@@ -10,7 +10,7 @@ import { BudgetTracker } from './components/BudgetTracker'
 import { DarkModeToggle } from './components/DarkModeToggle'
 import { Charts } from './components/Charts'
 import { RecurringTransactions } from './components/RecurringTransactions'
-import { CurrencySelector, formatCurrency } from './components/CurrencySelector'
+import { CurrencySelector } from './components/CurrencySelector'
 import { ReceiptButton } from './components/ReceiptUpload'
 
 function App() {
@@ -48,15 +48,15 @@ function App() {
       if (filters.type === 'expense' && expense.isIncome) return false;
 
       // Category filter
-      if (filters.category && !expense.category.toLowerCase().includes(filters.category.toLowerCase())) {
+      if (filters.category && !(expense.category || '').toLowerCase().includes(filters.category.toLowerCase())) {
         return false;
       }
 
       // Search filter
       if (filters.search) {
         const searchLower = filters.search.toLowerCase();
-        const matchesDescription = expense.description.toLowerCase().includes(searchLower);
-        const matchesRef = expense.ref.toLowerCase().includes(searchLower);
+        const matchesDescription = (expense.description || '').toLowerCase().includes(searchLower);
+        const matchesRef = (expense.ref || '').toLowerCase().includes(searchLower);
         if (!matchesDescription && !matchesRef) return false;
       }
 
