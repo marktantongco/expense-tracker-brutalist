@@ -1,0 +1,122 @@
+.expense-actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  border-top: 4px solid #000;
+  padding-top: 20px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #000;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+}
+
+.btn-edit {
+  background: #ffff00;
+  color: #000;
+}
+
+.btn-edit:hover {
+  background: #000;
+  color: #ffff00;
+}
+
+.btn-delete {
+  background: #fff;
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+.btn-delete:hover {
+  background: #ff0000;
+  color: #fff;
+}
+
+.expense-item.editing {
+  background: #ffff00;
+  border-color: #000;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-input {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 4px solid #000;
+  background: #fff;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  text-transform: uppercase;
+}
+
+.edit-input:focus {
+  outline: none;
+  border-color: #ff0000;
+}
+
+.edit-amount {
+  font-size: 20px;
+  color: #ff0000;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-save,
+.btn-cancel-edit {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #000;
+  cursor: pointer;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+}
+
+.btn-save {
+  background: #00ff00;
+  color: #000;
+}
+
+.btn-save:hover {
+  background: #000;
+  color: #00ff00;
+}
+
+.btn-cancel-edit {
+  background: #fff;
+  color: #000;
+}
+
+.btn-cancel-edit:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .expense-actions {
+    flex-direction: column;
+  }
+
+  .btn-edit,
+  .btn-delete {
+    width: 100%;
+  }
+}
