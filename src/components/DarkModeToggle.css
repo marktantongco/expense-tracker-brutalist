@@ -1,0 +1,152 @@
+.dark-mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border: 6px solid #000;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  z-index: 1000;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+}
+
+.dark-mode-toggle:hover {
+  transform: translate(-5px, -5px);
+  box-shadow: 10px 10px 0px #ff0000;
+}
+
+.dark-mode-toggle.active {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.dark-mode-toggle.active:hover {
+  box-shadow: 10px 10px 0px #00ff00;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #000;
+  color: #fff;
+}
+
+body.dark-mode .container {
+  background: #000;
+}
+
+body.dark-mode .header {
+  background: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+  box-shadow: 20px 20px 0px #00ff00;
+}
+
+body.dark-mode .date-stamp {
+  background: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+
+body.dark-mode .total-section {
+  background: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+
+body.dark-mode .total-section::before {
+  color: #00ff00;
+}
+
+body.dark-mode .total-label {
+  border-bottom-color: #00ff00;
+}
+
+body.dark-mode .total-amount {
+  color: #00ff00;
+  text-shadow: 8px 8px 0px #fff;
+}
+
+body.dark-mode .timeline-header {
+  background: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+  box-shadow: 15px 15px 0px #00ff00;
+}
+
+body.dark-mode .expense-item {
+  background: #111;
+  color: #fff;
+  border-color: #fff;
+}
+
+body.dark-mode .expense-item:hover {
+  box-shadow: 10px 10px 0px #00ff00;
+}
+
+body.dark-mode .expense-time {
+  background: #00ff00;
+  color: #000;
+}
+
+body.dark-mode .expense-desc {
+  color: #aaa;
+}
+
+body.dark-mode .footer {
+  background: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+
+body.dark-mode .net-balance {
+  text-shadow: 6px 6px 0px #fff;
+}
+
+body.dark-mode .brutal-line {
+  background: #00ff00;
+  border-color: #00ff00;
+}
+
+body.dark-mode .warning-box {
+  background: #000;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+body.dark-mode .btn-add {
+  background: #00ff00;
+  color: #000;
+}
+
+body.dark-mode .btn-filter,
+body.dark-mode .btn-import-export {
+  background: #111;
+  color: #fff;
+  border-color: #fff;
+}
+
+body.dark-mode .btn-reset {
+  background: #111;
+  color: #ff0000;
+  border-color: #ff0000;
+}
+
+body.dark-mode .no-expenses {
+  background: #000;
+  color: #00ff00;
+  border-color: #00ff00;
+}
+
+@media (max-width: 600px) {
+  .dark-mode-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    top: 10px;
+    right: 10px;
+  }
+}

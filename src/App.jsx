@@ -7,6 +7,8 @@ import { ImportExport } from './components/ImportExport'
 import { FilterPanel } from './components/FilterPanel'
 import { Analytics } from './components/Analytics'
 import { BudgetTracker } from './components/BudgetTracker'
+import { DarkModeToggle } from './components/DarkModeToggle'
+import { Charts } from './components/Charts'
 
 function App() {
   const [showForm, setShowForm] = useState(false);
@@ -66,8 +68,11 @@ function App() {
                           filters.minAmount || filters.maxAmount;
 
   return (
-    <div className="container">
-      {showForm && (
+    <>
+      <DarkModeToggle />
+      
+      <div className="container">
+        {showForm && (
         <ExpenseForm 
           onAdd={addExpense} 
           onClose={() => setShowForm(false)} 
@@ -121,7 +126,12 @@ function App() {
       )}
 
       {/* ANALYTICS */}
-      {showAnalytics && <Analytics expenses={expenses} />}
+      {showAnalytics && (
+        <>
+          <Analytics expenses={expenses} />
+          <Charts expenses={expenses} />
+        </>
+      )}
 
       {/* BUDGET TRACKER */}
       <BudgetTracker totalExpenses={totalExpenses} />
@@ -181,6 +191,7 @@ function App() {
         </div>
       </div>
     </div>
+    </>
   )
 }
 

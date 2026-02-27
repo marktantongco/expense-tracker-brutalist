@@ -1,0 +1,147 @@
+.charts-section {
+  margin-bottom: 40px;
+}
+
+.charts-header {
+  background: #ff0000;
+  color: #fff;
+  padding: 30px 40px;
+  border: 8px solid #000;
+  margin-bottom: 20px;
+}
+
+.charts-header h2 {
+  font-size: 36px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+}
+
+.chart-container {
+  background: #fff;
+  border: 8px solid #000;
+  padding: 30px;
+}
+
+.chart-container h3 {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0 0 20px 0;
+  text-align: center;
+  color: #000;
+}
+
+.chart-container canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.chart-legend {
+  margin-top: 30px;
+  border-top: 4px solid #000;
+  padding-top: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border-bottom: 2px solid #000;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.legend-item:last-child {
+  border-bottom: none;
+}
+
+.legend-color {
+  width: 30px;
+  height: 30px;
+  border: 4px solid #000;
+}
+
+.legend-label {
+  flex: 1;
+  letter-spacing: 1px;
+}
+
+.legend-value {
+  font-size: 18px;
+  color: #ff0000;
+}
+
+.chart-summary {
+  margin-top: 20px;
+  border-top: 4px solid #000;
+  padding-top: 20px;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  border: 4px solid #000;
+}
+
+.summary-item.green {
+  background: #00ff00;
+  color: #000;
+}
+
+body.dark-mode .chart-container {
+  background: #111;
+  border-color: #00ff00;
+}
+
+body.dark-mode .chart-container h3 {
+  color: #00ff00;
+}
+
+body.dark-mode .chart-legend {
+  border-top-color: #00ff00;
+}
+
+body.dark-mode .legend-item {
+  border-bottom-color: #00ff00;
+  color: #fff;
+}
+
+body.dark-mode .legend-value {
+  color: #00ff00;
+}
+
+body.dark-mode .chart-summary {
+  border-top-color: #00ff00;
+}
+
+body.dark-mode .summary-item {
+  border-color: #00ff00;
+}
+
+@media (max-width: 800px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-container canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
