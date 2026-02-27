@@ -232,19 +232,22 @@ body {
 
 /* CONTROLS */
 .controls {
-    display: flex;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
     margin-bottom: 40px;
 }
 
 .btn-add,
+.btn-filter,
+.btn-analytics,
+.btn-import-export,
 .btn-reset {
-    flex: 1;
-    padding: 25px 40px;
-    font-size: 20px;
+    padding: 20px 20px;
+    font-size: 14px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     border: 6px solid #000;
     cursor: pointer;
     transition: all 0.2s;
@@ -259,6 +262,38 @@ body {
 .btn-add:hover {
     transform: translate(-5px, -5px);
     box-shadow: 10px 10px 0px #000;
+}
+
+.btn-filter {
+    background: #ffff00;
+    color: #000;
+}
+
+.btn-filter:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 0px #000;
+}
+
+.btn-analytics {
+    background: #000;
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+.btn-analytics:hover {
+    background: #00ff00;
+    color: #000;
+}
+
+.btn-import-export {
+    background: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+.btn-import-export:hover {
+    background: #000;
+    color: #fff;
 }
 
 .btn-reset {

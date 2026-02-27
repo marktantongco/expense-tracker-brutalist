@@ -99,6 +99,15 @@ export const useExpenses = () => {
     setExpenses(DEFAULT_EXPENSES);
   };
 
+  const importExpenses = (newExpenses, mode = 'merge') => {
+    if (mode === 'replace') {
+      setExpenses(newExpenses);
+    } else {
+      // Merge - add new expenses to existing
+      setExpenses(prev => [...newExpenses, ...prev]);
+    }
+  };
+
   const totalExpenses = expenses
     .filter(e => e.amount < 0)
     .reduce((sum, e) => sum + Math.abs(e.amount), 0);
@@ -115,6 +124,7 @@ export const useExpenses = () => {
     updateExpense,
     deleteExpense,
     resetExpenses,
+    importExpenses,
     totalExpenses,
     totalIncome,
     netBalance

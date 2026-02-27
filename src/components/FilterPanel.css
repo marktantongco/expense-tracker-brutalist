@@ -1,0 +1,163 @@
+.filter-panel {
+  background: #ffff00;
+  border: 8px solid #000;
+  margin-bottom: 40px;
+}
+
+.filter-header {
+  background: #000;
+  color: #ffff00;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #ffff00;
+}
+
+.filter-header h3 {
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.close-filter-btn {
+  background: #ffff00;
+  color: #000;
+  border: none;
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  cursor: pointer;
+  font-weight: 900;
+  transition: all 0.2s;
+}
+
+.close-filter-btn:hover {
+  background: #ff0000;
+  color: #fff;
+}
+
+.filter-content {
+  padding: 30px;
+}
+
+.filter-group {
+  margin-bottom: 25px;
+}
+
+.filter-group label {
+  display: block;
+  font-size: 14px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.filter-input,
+.filter-input-small {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  border: 4px solid #000;
+  background: #fff;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  text-transform: uppercase;
+}
+
+.filter-input:focus,
+.filter-input-small:focus {
+  outline: none;
+  border-color: #ff0000;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #000;
+  background: #fff;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+}
+
+.filter-btn:hover {
+  background: #000;
+  color: #ffff00;
+}
+
+.filter-btn.active {
+  background: #000;
+  color: #00ff00;
+}
+
+.amount-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-input-small {
+  width: auto;
+  flex: 1;
+}
+
+.range-separator {
+  font-size: 24px;
+  font-weight: 900;
+  color: #000;
+}
+
+.btn-clear-filters {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 4px solid #000;
+  background: #ff0000;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  margin-top: 20px;
+}
+
+.btn-clear-filters:hover {
+  background: #000;
+  color: #ff0000;
+}
+
+@media (max-width: 600px) {
+  .filter-content {
+    padding: 20px;
+  }
+
+  .filter-buttons {
+    flex-direction: column;
+  }
+
+  .amount-range {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .range-separator {
+    text-align: center;
+  }
+}

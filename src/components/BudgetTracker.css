@@ -1,0 +1,258 @@
+.budget-tracker {
+  border: 8px solid #000;
+  margin-bottom: 40px;
+}
+
+.budget-tracker.good {
+  background: #fff;
+}
+
+.budget-tracker.warning {
+  background: #ffff00;
+}
+
+.budget-tracker.over {
+  background: #ff0000;
+  color: #fff;
+}
+
+.budget-header {
+  background: #000;
+  color: #00ff00;
+  padding: 25px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #00ff00;
+}
+
+.budget-header h3 {
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.btn-edit-budget {
+  background: #00ff00;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  transition: all 0.2s;
+}
+
+.btn-edit-budget:hover {
+  background: #fff;
+  color: #000;
+}
+
+.budget-content {
+  padding: 35px;
+}
+
+.budget-amounts {
+  margin-bottom: 30px;
+}
+
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 4px solid #000;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.budget-tracker.over .budget-item {
+  border-bottom-color: #fff;
+}
+
+.budget-item:last-child {
+  border-bottom: none;
+}
+
+.budget-label {
+  letter-spacing: 2px;
+}
+
+.budget-value {
+  font-size: 24px;
+}
+
+.budget-value.spent {
+  color: #ff0000;
+}
+
+.budget-tracker.over .budget-value.spent {
+  color: #ffff00;
+}
+
+.budget-value.positive {
+  color: #00ff00;
+}
+
+.budget-tracker.over .budget-value.positive {
+  color: #ffff00;
+}
+
+.budget-value.negative {
+  color: #ff0000;
+}
+
+.budget-tracker.over .budget-value.negative {
+  color: #ffff00;
+}
+
+.budget-progress {
+  margin-top: 30px;
+}
+
+.progress-bar {
+  height: 40px;
+  background: #fff;
+  border: 4px solid #000;
+  position: relative;
+  overflow: hidden;
+}
+
+.budget-tracker.over .progress-bar {
+  background: #000;
+  border-color: #fff;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.progress-fill.good {
+  background: #00ff00;
+}
+
+.progress-fill.warning {
+  background: #ffff00;
+}
+
+.progress-fill.over {
+  background: #fff;
+}
+
+.progress-label {
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.budget-alert {
+  margin-top: 25px;
+  padding: 20px;
+  border: 4px solid #000;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.budget-alert.warning {
+  background: #000;
+  color: #ffff00;
+  border-color: #ffff00;
+}
+
+.budget-alert.danger {
+  background: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.budget-edit {
+  text-align: center;
+}
+
+.budget-input {
+  width: 100%;
+  padding: 25px;
+  font-size: 32px;
+  font-weight: 900;
+  border: 4px solid #000;
+  background: #fff;
+  text-align: center;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  margin-bottom: 20px;
+  color: #00ff00;
+}
+
+.budget-input:focus {
+  outline: none;
+  border-color: #00ff00;
+  box-shadow: 8px 8px 0px #00ff00;
+}
+
+.budget-edit-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-save-budget,
+.btn-cancel-budget {
+  flex: 1;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #000;
+  cursor: pointer;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  transition: all 0.2s;
+}
+
+.btn-save-budget {
+  background: #00ff00;
+  color: #000;
+}
+
+.btn-save-budget:hover {
+  background: #000;
+  color: #00ff00;
+}
+
+.btn-cancel-budget {
+  background: #fff;
+  color: #000;
+}
+
+.btn-cancel-budget:hover {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .budget-content {
+    padding: 20px;
+  }
+
+  .budget-item {
+    font-size: 16px;
+  }
+
+  .budget-value {
+    font-size: 20px;
+  }
+
+  .budget-input {
+    font-size: 24px;
+  }
+}

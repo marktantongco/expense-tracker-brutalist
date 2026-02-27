@@ -1,0 +1,207 @@
+.import-export-panel {
+  background: #fff;
+  border: 8px solid #000;
+  max-width: 700px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.panel-content {
+  padding: 40px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.section h3 {
+  font-size: 28px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.section-desc {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.button-group {
+  display: flex;
+  gap: 15px;
+}
+
+.btn-export-csv,
+.btn-export-json {
+  flex: 1;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 4px solid #000;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+}
+
+.btn-export-csv {
+  background: #00ff00;
+  color: #000;
+}
+
+.btn-export-csv:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px #000;
+}
+
+.btn-export-json {
+  background: #ffff00;
+  color: #000;
+}
+
+.btn-export-json:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px #000;
+}
+
+.divider {
+  height: 4px;
+  background: #000;
+  margin: 40px 0;
+}
+
+.import-mode {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.radio-label {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #fff;
+  border: 4px solid #000;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+
+.radio-label:hover {
+  background: #ffff00;
+}
+
+.radio-label input[type="radio"] {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.radio-label input[type="radio"]:checked + span {
+  color: #ff0000;
+}
+
+.file-upload-btn {
+  display: block;
+  width: 100%;
+  padding: 25px;
+  font-size: 20px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 4px solid #000;
+  background: #00ff00;
+  color: #000;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Arial Black', 'Impact', sans-serif;
+  margin-bottom: 20px;
+}
+
+.file-upload-btn:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 8px 8px 0px #000;
+}
+
+.error-box {
+  background: #ff0000;
+  color: #fff;
+  padding: 20px;
+  border: 4px solid #000;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  background: #ffff00;
+  color: #000;
+  padding: 15px;
+  border: 4px solid #000;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.stats {
+  background: #000;
+  color: #fff;
+  padding: 30px;
+  border: 4px solid #fff;
+}
+
+.stats h3 {
+  color: #00ff00;
+  margin-bottom: 20px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 2px solid #fff;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.stat-item:last-child {
+  border-bottom: none;
+}
+
+.stat-label {
+  color: #fff;
+}
+
+.stat-value {
+  color: #00ff00;
+  font-size: 24px;
+}
+
+@media (max-width: 600px) {
+  .panel-content {
+    padding: 20px;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .section h3 {
+    font-size: 22px;
+  }
+}
