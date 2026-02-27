@@ -241,13 +241,14 @@ body {
 .btn-add,
 .btn-filter,
 .btn-analytics,
+.btn-recurring,
 .btn-import-export,
 .btn-reset {
-    padding: 20px 20px;
-    font-size: 14px;
+    padding: 20px 15px;
+    font-size: 13px;
     font-weight: 900;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     border: 6px solid #000;
     cursor: pointer;
     transition: all 0.2s;
@@ -283,6 +284,17 @@ body {
 .btn-analytics:hover {
     background: #00ff00;
     color: #000;
+}
+
+.btn-recurring {
+    background: #00ffff;
+    color: #000;
+    border-color: #000;
+}
+
+.btn-recurring:hover {
+    background: #000;
+    color: #00ffff;
 }
 
 .btn-import-export {

@@ -4,10 +4,35 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>expense-tracker-brutalist</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#ff0000" />
+    <meta name="description" content="Track your money. Brutally honest. Brutally simple. Privacy-first expense tracker with PWA support." />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Brutalist Expense Tracker" />
+    <meta property="og:description" content="Privacy-first expense tracker with bold brutalist design" />
+    <meta property="og:type" content="website" />
+    
+    <title>Brutalist Expense Tracker - Privacy-First Finance</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registered:', reg))
+            .catch(err => console.log('Service Worker registration failed:', err));
+        });
+      }
+    </script>
   </body>
 </html>

@@ -9,12 +9,17 @@ import { Analytics } from './components/Analytics'
 import { BudgetTracker } from './components/BudgetTracker'
 import { DarkModeToggle } from './components/DarkModeToggle'
 import { Charts } from './components/Charts'
+import { RecurringTransactions } from './components/RecurringTransactions'
+import { CurrencySelector, formatCurrency } from './components/CurrencySelector'
+import { ReceiptButton } from './components/ReceiptUpload'
 
 function App() {
   const [showForm, setShowForm] = useState(false);
   const [showImportExport, setShowImportExport] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
   const [showAnalytics, setShowAnalytics] = useState(false);
+  const [showRecurring, setShowRecurring] = useState(false);
+  const [currency, setCurrency] = useState({ code: 'PHP', symbol: '₱', name: 'Philippine Peso' });
   const [filters, setFilters] = useState({
     category: '',
     type: 'all',
@@ -70,6 +75,7 @@ function App() {
   return (
     <>
       <DarkModeToggle />
+      <CurrencySelector onCurrencyChange={setCurrency} />
       
       <div className="container">
         {showForm && (
@@ -105,6 +111,9 @@ function App() {
         <button className="btn-analytics" onClick={() => setShowAnalytics(!showAnalytics)}>
           📊 ANALYTICS
         </button>
+        <button className="btn-recurring" onClick={() => setShowRecurring(!showRecurring)}>
+          🔁 RECURRING
+        </button>
         <button className="btn-import-export" onClick={() => setShowImportExport(true)}>
           📁 IMPORT/EXPORT
         </button>
@@ -131,6 +140,11 @@ function App() {
           <Analytics expenses={expenses} />
           <Charts expenses={expenses} />
         </>
+      )}
+
+      {/* RECURRING TRANSACTIONS */}
+      {showRecurring && (
+        <RecurringTransactions onAddRecurring={addExpense} />
       )}
 
       {/* BUDGET TRACKER */}
@@ -162,12 +176,14 @@ function App() {
           </div>
         ) : (
           filteredExpenses.map((expense) => (
-            <ExpenseItem
-              key={expense.id}
-              expense={expense}
-              onUpdate={updateExpense}
-              onDelete={deleteExpense}
-            />
+            <div key={expense.id}>
+              <ExpenseItem
+                expense={expense}
+                onUpdate={updateExpense}
+                onDelete={deleteExpense}
+              />
+              <ReceiptButton expenseId={expense.id} />
+            </div>
           ))
         )}
       </div>
