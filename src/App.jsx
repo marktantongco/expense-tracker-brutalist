@@ -46,7 +46,7 @@ function App() {
       ref: 'REF: ONLINE TRANSACTION'
     },
     {
-      time: 'FEB 28 • 12:58 AM',
+      time: 'FEB 28 • 1:24 AM',
       category: '🏢 Green Residences',
       description: 'Online Payment - Link and Pay',
       amount: -95.00,
